@@ -22,7 +22,6 @@ function showNonprofitDataInList(feature){
        <li>${'Workability match: '+feature.properties['Workability']+'/5'}</li>
 :
        <p>Links: <br>
-       <base href="https://github.com/SofiaFasullo/lasalleNPC_TAP/" />
        <li><a href="${feature.properties['Website']}">Website</a></li>
        <li><a href="${feature.properties['Instagram']}">Instagram</a></li>
        <li><a href="${feature.properties['Facebook']}">Facebook</a></li>
