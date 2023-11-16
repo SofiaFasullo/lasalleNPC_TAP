@@ -25,7 +25,7 @@ function initializeFilters (nonprofits, eventBus){
     if (checkboxTypes.contains('uses-checkbox')){
       filterUses();
     } else if (checkboxTypes.contains('overall-score-checkbox')){
-      console.log("i get to this")
+      filterOverallScore();
     }
   }
 
@@ -46,6 +46,34 @@ function initializeFilters (nonprofits, eventBus){
       detail: filteredData
     })
     eventBus.dispatchEvent(newEvent3)
+  }
+
+  function filterOverallScore(){
+    const filteredData = []
+    for (const cb of allCheckboxes){
+      if (cb.checked){
+        if (cb.value == 'null/undecided'){
+          for (const nonprofit of nonprofits.features){
+            var overallScore = nonprofit.properties['Overall.Score'];
+            if (overallScore==null){
+              filteredData.push(nonprofit);
+            }
+          }
+        } else {
+          for (const nonprofit of nonprofits.features){
+            var overallScore = nonprofit.properties['Overall.Score'];
+            if (overallScore!==null && (overallScore==cb.value || overallScore==cb.value+0.5)){
+              filteredData.push(nonprofit);
+            }
+          }
+        }
+      }
+    }
+    const newEvent = new CustomEvent("filtered",
+    {
+      detail: filteredData
+    })
+    eventBus.dispatchEvent(newEvent)
   }
   
   function checkUnfiltered (){
