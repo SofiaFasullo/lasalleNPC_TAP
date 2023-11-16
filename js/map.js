@@ -41,7 +41,7 @@ function initMap(event)  {
 
 function showNonprofitsOnMap(nonprofitsToShow, map) {
   console.log(nonprofitsToShow)
-  //map.nonprofitsLayer.clearLayers();
+  map.nonprofitsLayer.clearLayers();
   
   for (const nonprofit of nonprofitsToShow) {
     map.nonprofitsLayer.addData(nonprofit);
