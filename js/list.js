@@ -20,7 +20,7 @@ function showNonprofitDataInList(feature){
        <li>${'Programmability match: '+feature.properties['Programmability']+'/5'}</li>
        <li>${'Needs match: '+feature.properties['Needs']+'/5'}</li>
        <li>${'Workability match: '+feature.properties['Workability']+'/5'}</li>
-:
+
        <p>Links: <br>
        <li><a href="${feature.properties['Website']}">Website</a></li>
        <li><a href="${feature.properties['Instagram']}">Instagram</a></li>
