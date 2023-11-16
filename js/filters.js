@@ -10,7 +10,8 @@ function initializeFilters (nonprofits, eventBus){
       "change", () => {
         const numChecked = checkUnfiltered();
         if (numChecked > 0){
-          filterUses();
+          const checkboxClasses = cb.classList
+          discernCheckboxes(checkboxClasses);
         } else {
           console.log('No filters are applied so all data is reset');
           resetData();
@@ -18,6 +19,14 @@ function initializeFilters (nonprofits, eventBus){
         
       }
     )
+  }
+
+  function discernCheckboxes(checkboxTypes){
+    if (checkboxTypes.contains('uses-checkbox')){
+      filterUses();
+    } else if (checkboxTypes.contains('overall-score-checkbox')){
+      console.log("i get to this")
+    }
   }
 
   function filterUses(){
