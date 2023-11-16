@@ -4,9 +4,25 @@ body {
 
 #map { 
     height: 80vh;
-    width: 50%;
+    width: 70%;
+}
+
+
+#middle-container{
+    display:flex;
+    justify-content: center;
+}
+
+#text{
+    align-self: center;
+    padding-left: 50px;
 }
 
 h2{
     color: #a60A3d;
+}
+
+h1{
+    text-align: center;
+    color: darkolivegreen;
 }
