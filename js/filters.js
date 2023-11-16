@@ -28,7 +28,38 @@ function initializeFilters (nonprofits, eventBus){
       filterOverallScore();
     } else if (checkboxTypes.contains('budget-checkbox')){
       filterBudget();
+    } else if (checkboxTypes.contains('criteria-checkbox')){
+      filterCriteria();
     }
+  }
+
+  function filterUses(){
+    const filteredData = []
+    for (const cb of allCheckboxes){
+      if (cb.checked){
+        if (cb.value == 'Needs'){
+          for (const nonprofit of nonprofits.features){
+          var needs = nonprofit.properties['Needs'];
+          if (needs!== null && needs==5){
+            filteredData.push(nonprofit);
+            }
+          }
+        } else if (cb.value == 'Programming'){
+          for (const nonprofit of nonprofits.features){
+          var programming = nonprofit.properties['Programmability'];
+          if (programming!== null && programming==5){
+            filteredData.push(nonprofit);
+            }
+          }
+        }
+        
+      }
+    }
+    const newEvent3 = new CustomEvent("filtered",
+    {
+      detail: filteredData
+    })
+    eventBus.dispatchEvent(newEvent3)
   }
 
   function filterUses(){
