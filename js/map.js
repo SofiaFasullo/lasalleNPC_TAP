@@ -1,7 +1,15 @@
 
+function setupMapEventHandlers(map) {
 
-function initMap()  {
-    const map = L.map('map').setView([39.955, -75.236], 14);
+  map.eventBus.addEventListener("filtered",(evt)=> {
+    const filteredNonprofits = evt.detail
+    showNonprofitsOnMap(filteredNonprofits, map);
+  })
+  
+}
+
+function initMap(event)  {
+    const map = L.map('map').setView([40, -75.172], 11);
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -11,8 +19,8 @@ function initMap()  {
     map.nonprofitsLayer = L.geoJSON(null, {
         pointToLayer: (feature, latlng) => L.circleMarker(latlng),
         style: {
-          color: "#ff6c3c",
-          fillColor: "#ff6c3c",
+          color: "#a60A3d",
+          fillColor: "#a60A3d",
           radius: 5,
           weight: 1.5,
         },
@@ -22,14 +30,27 @@ function initMap()  {
         })
       .addTo(map);
 
-   
+      map.eventBus = event;
+
+      setupMapEventHandlers(map);
 
     return map;
 
 };
 
 
+function showNonprofitsOnMap(nonprofitsToShow, map) {
+  console.log(nonprofitsToShow)
+  //map.nonprofitsLayer.clearLayers();
+  
+  for (const nonprofit of nonprofitsToShow) {
+    map.nonprofitsLayer.addData(nonprofit);
+  }
+}
+
+
 
 export {
-    initMap
+    initMap,
+    showNonprofitsOnMap
 }

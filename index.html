@@ -10,11 +10,34 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
-
-    
-
     <main>
         <div id="map"></div>
+        <div class="checkbox-container" id="all-checkbox-contianer">
+
+            <div class="checkbox-container" id="checkbox-contianer-1">
+                <h2>Evidence-Informed Implementation Strategies</h2>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-1" value="Violence Interruption">Violence Interruption</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-2" value="Community Events">Community Events</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-3" value="Data-informed Decision Making">Data-informed Decision Making</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-4" value="Street Outreach">Street Outreach</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-5" value="Credible Messengers">Credible Messengers</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-6" value="Educational Outreach">Educational Outreach</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-7" value="Case Management">Case Management</label>
+                <label><input type="checkbox" class="checkbox uses-checkbox" id="checkbox-1-8" value="Other">Other</label>
+            </div>
+
+            <div class="checkbox-container" id="checkbox-contianer-2">
+                <h2>Overall Score</h2>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-1" value="null/undecided">null/undecided</label>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-2" value="1">1</label>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-3" value="2">2</label>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-4" value="3">3</label>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-5" value="4">4</label>
+                <label><input type="checkbox" class="checkbox overall-score-checkbox" id="checkbox-2-6" value="5">5</label>
+            </div>
+
+        </div>
+
     </main>
 
     <script type = "module" src="js/main.js"></script>

@@ -1,6 +1,8 @@
-import { initMap } from "./map.js";
+//import modules
+import { initMap, showNonprofitsOnMap } from "./map.js";
+import {initializeFilters} from './filters.js';
 
-function grabNonProfitData(onSuccess, onFailure) {
+async function grabNonProfitData(onSuccess, onFailure) {
     fetch('data/nonprofits.geojson')
     .then(resp => {
       if (resp.status === 200) {
@@ -14,24 +16,20 @@ function grabNonProfitData(onSuccess, onFailure) {
     .then(onSuccess);
   }
 
+//create map
+const eventBus = new EventTarget();
+const map = initMap(eventBus);
 
-const map = initMap();
 function onNonProfitDataLoad(data) {
-    map.nonprofitsLayer.addData(data);
-    }
-
-
-
-
-
-function mapData() {
-    grabNonProfitData(onNonProfitDataLoad);
-
+  showNonprofitsOnMap(data.features, map);
+  initializeFilters(data,eventBus);
   }
 
+function mapNonprofits() {
+    grabNonProfitData(onNonProfitDataLoad);
+  }
 
-
-mapData();
+mapNonprofits();
 
 //global scale
 window.map = map;
