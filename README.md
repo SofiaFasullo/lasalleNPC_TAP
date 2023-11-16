@@ -1,7 +1,1 @@
-* checkbox
-* change
-* filter
-* make event
-* call event
-* clear layer
-* display filtered
+This is a site to explore nonprofits.
