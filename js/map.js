@@ -5,7 +5,6 @@ function setupMapEventHandlers(map) {
     const filteredNonprofits = evt.detail
     showNonprofitsOnMap(filteredNonprofits, map);
   })
-  
 }
 
 function initMap(event)  {

@@ -3,19 +3,19 @@ body {
 }
 
 #map { 
-    height: 80vh;
-    width: 70%;
+    height: 90vh;
+    width: 50%;
 }
 
 
 #middle-container{
     display:flex;
-    justify-content: center;
+    justify-content: left;
 }
 
-#text{
-    align-self: center;
-    padding-left: 50px;
+#info{
+    width: 50%;
+    margin: 50px;
 }
 
 h2{
@@ -23,6 +23,8 @@ h2{
 }
 
 h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
-    color: darkolivegreen;
+    color: darkblue;
 }

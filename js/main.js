@@ -1,6 +1,7 @@
 //import modules
 import { initMap, showNonprofitsOnMap } from "./map.js";
 import {initializeFilters} from './filters.js';
+import {onNonprofitClicked} from './list.js'
 
 async function grabNonProfitData(onSuccess, onFailure) {
     fetch('data/nonprofits.geojson')
@@ -29,7 +30,12 @@ function mapNonprofits() {
     grabNonProfitData(onNonProfitDataLoad);
   }
 
+function setupInteractionEvents() {
+    map.nonprofitsLayer.addEventListener('click', onNonprofitClicked);
+  }
+
 mapNonprofits();
+setupInteractionEvents();
 
 //global scale
 window.map = map;
