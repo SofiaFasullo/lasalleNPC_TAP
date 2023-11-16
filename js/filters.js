@@ -33,7 +33,7 @@ function initializeFilters (nonprofits, eventBus){
     }
   }
 
-  function filterUses(){
+  function filterCriteria(){
     const filteredData = []
     for (const cb of allCheckboxes){
       if (cb.checked){
