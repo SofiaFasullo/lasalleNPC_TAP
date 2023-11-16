@@ -17,9 +17,10 @@ function showNonprofitDataInList(feature){
        <li>${'Overall score: '+feature.properties['Overall.Score']}</li>
        <li>${'Location based in NW Philly? '+feature.properties['Location']}</li>
        <li>${'Do they have required documents? '+feature.properties['Required_Documents']}</li>
-       <li>${'Programming match: are the organizations focused on mitigating gun violence? '+feature.properties['Programmability']+'/5'}</li>
-       <li>${'Needs match: do the organizations' needs match what LaSalle can offer? '+feature.properties['Needs']+'/5'}</li>
-       <li>${'Workability match: have the organizations been responsive to LaSalle? '+feature.properties['Workability']+'/5'}</li>
+       <li>${'Programming match: '+feature.properties['Programmability']+'/5'}</li>
+       <li>${'Needs match: '+feature.properties['Needs']+'/5'}</li>
+       <li>${'Workability match: '+feature.properties['Workability']+'/5'}</li>
+
        <p>Links: <br>
        <li><a href="${feature.properties['Website']}">Website</a></li>
        <li><a href="${feature.properties['Instagram']}">Instagram</a></li>
